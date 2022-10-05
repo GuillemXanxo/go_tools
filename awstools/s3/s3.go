@@ -66,7 +66,8 @@ func (b *S3Client) Upload(filename string, bucketName string, keyName string) (*
 		Bucket: aws.String(bucketName),
 		Key:    aws.String(keyName),
 		Body:   file,
-		ACL:    aws.String("public-read"),
+		ACL:    aws.String(s3.BucketCannedACLPublicRead), //--> makes the file public to read.
+		//ACL: aws.String(s3.BucketCannedACLPrivate), --> to make the file private to read.
 	})
 	if err != nil {
 		fmt.Println(fmt.Errorf("failed to upload file, %v", err))
