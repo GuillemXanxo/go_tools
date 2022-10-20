@@ -89,7 +89,7 @@ func (d *DynamoDBClient) ScanItems() (listPersons []Person, err error) {
 		return nil, err
 	}
 	listElements := output.Items
-	err = dynamodbattribute.UnmarshalListOfMaps(listElements, listPersons)
+	err = dynamodbattribute.UnmarshalListOfMaps(listElements, &listPersons)
 	return listPersons, nil
 }
 
