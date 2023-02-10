@@ -1,0 +1,1 @@
+Slice cheatsheet: https://ueokande.github.io/go-slice-tricks/
